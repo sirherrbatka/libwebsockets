@@ -907,6 +907,10 @@ message(" LWS_IPV6 = ${LWS_IPV6}")
 message(" LWS_WITH_HTTP2 = ${LWS_WITH_HTTP2}")
 message("---------------------------------------------------------------------")
 
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEAS} /MT")
+
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_RELEASE} /MTd")
+
 # These will be available to parent projects including libwebsockets using add_subdirectory()
 set(LIBWEBSOCKETS_LIBRARIES websocket websockets_shared CACHE STRING "Libwebsocket libraries")
 set(LIBWEBSOCKETS_LIBRARIES_STATIC websocket CACHE STRING "Libwebsocket static library")
